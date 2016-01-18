@@ -88,25 +88,3 @@
     padding-bottom: 4em;
   }
 }
-
-/*------------------------------------*\
-    #COMPONENTS-BANNER-IMAGE
-\*------------------------------------*/
-
-/*
- *
- * Banner image is the main image for aticle/page.
- * see includes/banner-image.html
- *
- */
-
-.post .banner-image, 
-.page .banner-image, 
-.post .banner_video, 
-.page .banner_video {
-  margin: -1em -1em 0 -1em;
-  padding-bottom: 1em;
-  @include MQ(mobile) {
-    margin: -2em -2em 0 -2em;
-  }
-}
