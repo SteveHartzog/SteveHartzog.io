@@ -9,14 +9,12 @@
  */
 
 header {
-  position: fixed;
-  display: block;
   background: darken($main-bg-color, 5%);
-  margin-bottom: 3rem;
   border-bottom: 1px solid $gray-lighter;
-  border-right: 4px solid $color-1;
+  border-right: 2px solid $color-1;
   width: 100%;
   padding: 1em 0;
+  height: 75px;
   
   /* 
    * Special media query hack for small tablet screen.

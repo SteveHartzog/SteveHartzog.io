@@ -86,14 +86,14 @@ body {
     size: 100%;
     family: $font-family-base; // variables inside partials > _variables.scss
   }
-  color: $main-fg-color; // $gray-dark;
+  color: $main-fg-color;
   background: $main-bg-color;
 }
 
 /* Prevent scroll on narrow devices */
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   border-right: 2px solid $color-1;
   height: 100%;
 }
@@ -131,8 +131,8 @@ img {
  * Main wrapper is used to re-position the site content when sidebar is toggled.
  */
 .main-wrapper {
-  position: relative;
-  width: 100%;
+  height: 100%;
+  padding-bottom: 75px;
   overflow: hidden;
 }
 
@@ -141,19 +141,19 @@ img {
  * 
  */
 .container {
-  width: 90%;
   max-width: $ultraHD; // See breakpoints in helpers/_layout.scss
-  margin: 0 auto;
-
+  
   &::after { /* Clearfix */
-      content: '';
-      display: table;
-      clear: both;
+    content: '';
+    display: table;
+    clear: both;
   }
 }
 .container.content {
-    padding-top: 120px;
-  }
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
 
 /*------------------------------------*\
     #COMPONENTS
