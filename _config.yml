@@ -39,7 +39,7 @@ theme:
 
 # Build settings
 markdown: kramdown
-source: src
+#source: src
 destination: _site
 
 # Permalinks
