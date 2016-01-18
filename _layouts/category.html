@@ -14,14 +14,12 @@ layout: default
 
   {% for post in site.categories.[page.category] %}
     {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
-    {% if currentyear == year %}
-      </ul>
-    {% else %}
+    {% if currentyear != year %}
       <h5>{{ currentyear }}</h5>
       <ul>
     {% endif %}
     <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
     {% capture year %}{{currentyear}}{% endcapture %} 
   {% endfor %}
-
+  </ul>
 </div>

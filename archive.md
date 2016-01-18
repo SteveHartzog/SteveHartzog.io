@@ -2,7 +2,7 @@
 layout: page
 title: Blog Archive
 permalink: /archive/
-banner_image: machu-picchu.jpg
+banner_image: archive.png
 ---
 
 <div>
