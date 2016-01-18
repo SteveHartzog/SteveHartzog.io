@@ -1,0 +1,212 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+/**
+ *
+ * codeRambler jekyll theme, based on Maya
+ * Designed, built, by web-create. 
+ *
+ * CONTENTS
+ *
+ * SETTINGS
+ * Globals              - Import sass global variables and configs properties
+ *
+ * TOOLS
+ * Mixins/Functions     - Sass mixins & functions
+ * Modules              - Sass modules
+ *
+ * GENERTIC
+ * Resets               - Gloabal resets thanks to meyerweb.com
+ * Body resets          - Body resets, box sizing 
+ * 
+ * BASE
+ * Typography           - Custom typography
+ * Syntax               - Syntax highlighting
+ * 
+ * OBJECTS
+ * Wrappers             - Wrapping and constraining elements.
+ *  
+ * COMPONENTS
+ * header               - Site header
+ * sidebar              - Sidebar & toggle
+ * post/pages           - Post/Page articles
+ * paginate buttons     - Paginate buttons
+ * post-banner          - Banner image/video
+ * comments             - Post comments
+ * author info/links    - Author info and share buttons
+ */
+
+@charset "utf-8";
+
+/*------------------------------------*\
+    #SETTINGS-GLOBALS
+\*------------------------------------*/
+@import "helpers/variables";
+
+/*------------------------------------*\
+    #TOOLS-MIXINGS-AND-FUNCTIONS
+\*------------------------------------*/
+@import "helpers/all";
+
+/*------------------------------------*\
+    #TOOLS-MODULES
+\*------------------------------------*/
+@import "modules/all";
+
+/*------------------------------------*\
+    #GENERTIC-RESETS
+\*------------------------------------*/
+@import "base/reset";
+
+/*------------------------------------*\
+    #GENERTIC-BODY-RESETS
+\*------------------------------------*/
+/*
+ *
+ * Enable google webkit font smoothing
+ * Reset to border-box
+ * Setting up font family
+ */
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  //change the default tap highlight color, when you tap on mobile device
+  -webkit-tap-highlight-color: transparent;
+}
+
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
+
+body {
+  font: {
+    size: 100%;
+    family: $font-family-base; // variables inside partials > _variables.scss
+  }
+  color: $main-fg-color; // $gray-dark;
+  background: $main-bg-color;
+}
+
+/* Prevent scroll on narrow devices */
+html,
+body {
+  overflow-x: hidden;
+  border-right: 2px solid $color-1;
+  height: 100%;
+}
+
+/* Anchor tag style */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: $link-fg-color;
+}
+
+a:hover {
+  @include transition(all .3s);
+  border-bottom-color: $link-fg-color; 
+}
+
+/* Responsive images */
+img {
+  border: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+@import "base/type";
+@import "base/syntax-highlighting";
+
+/*------------------------------------*\
+    #OBJECTS-WRAPPERS
+\*------------------------------------*/
+/*
+ * Main wrapper is used to re-position the site content when sidebar is toggled.
+ */
+.main-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+ * Container - Centering the page content.
+ * 
+ */
+.container {
+  width: 90%;
+  max-width: $ultraHD; // See breakpoints in helpers/_layout.scss
+  margin: 0 auto;
+
+  &::after { /* Clearfix */
+      content: '';
+      display: table;
+      clear: both;
+  }
+}
+.container.content {
+    padding-top: 120px;
+  }
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+@import "components/header";
+@import "components/sidebar";
+@import "components/post";
+
+/*------------------------------------*\
+    #COMPONENTS-COMMENTS
+\*------------------------------------*/
+/*
+ * 
+ * Disqus comments, share-buttons 
+ */
+
+.comments {
+  border-top: 1px solid $gray-lighter;
+  padding: 1.5em 0 1em 0;
+  @include column(1);
+  display: block;
+  position:relative;
+  @include font-size(14px);
+}
+
+/*------------------------------------*\
+    #COMPONENTS-AUTHOR-AND-SHARE-BUTTONS
+\*------------------------------------*/
+/*
+ * Author information on post page
+ */
+
+.author-info {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.author, .share-buttons {
+  border-top: 1px solid $gray-lighter;
+  padding: 1em 0 0 0;
+  @include column(1);
+  @include MQ(mobile) {
+    padding: 1em .5em 0 0;
+    @include column(.5);
+  } 
+}
+
+.author, .share-buttons { 
+  h5, h6 { margin: 0 0 4px 0; }
+  h5 { text-transform: uppercase; color: $main-fg-color; }
+  p { @include font-size(14px); }
+  img { float:left; margin-right: 1em; }
+  ul { margin-bottom: 0; }
+}

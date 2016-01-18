@@ -81,11 +81,11 @@ about configuration can be found on the [Jekyll Documentationn][jekyll]
 
 ### Page level configurations
 
-These configurations can be found within the top section of the each page, see the a post under `_posts` directory for example. 
+These configurations can be found within the top section of the each page, see the a post under `src/_posts` directory for example. 
 
 | Property name | Description  |
 ------------ | -------------
-`banner_image` | Specify the image name eg: `sample-banner-image-1.jpg` for banner image for the post. Jekyll system tries to locate the image under `assets/images`. So make sure you place all banner images under assets/images.
+`banner_image` | Specify the image name eg: `sample-banner-image-1.jpg` for banner image for the post. Jekyll system tries to locate the image under `src/images`. So make sure you place all banner images under assets/images.
 `banner_video` | If you want to embed `Youtube/Vimeo` Video or `SoundCloud` audio, Specify the resource within single quotes. Please have a look on example post in `_posts/2014-12-14-what-is-nodejs.md` to see how we embed YouTube video. 
 `comments` | Set as True/False, if false will disable comments for current page/post.
 `browser_title` | SEO property.  Use this property if you want to display different browser title other than default page title. Please have a look on example post under `_posts/2014-12-14-what-is-nodejs.md` to see how we used the property.
@@ -93,7 +93,7 @@ These configurations can be found within the top section of the each page, see t
 
 ### Sidebar navigation configurations
 
-As jekyll supports data files, **Gaya** theme uses `YAML` [data file][df] to load sidebar navigation items. You could find the `main-nav.yaml` data file under `_data/` directory. You could add any number of menu items by modifying `main-nav.yaml`. 
+As jekyll supports data files, this theme uses `YAML` [data file][df] to load sidebar navigation items. You could find the `main-nav.yaml` data file under `src/_data/` directory. You could add any number of menu items by modifying `main-nav.yaml`. 
 
 An example of `main-nav.yaml`:
 
@@ -104,7 +104,7 @@ An example of `main-nav.yaml`:
   href: "/archive"
 ```
 
-At some point you want to link an external URL, in that case you could edit the `_includes/sidebar.html` file. See the following example:
+At some point you want to link an external URL, in that case you could edit the `src/_includes/sidebar.html` file. See the following example:
 
 ```
 <nav class="sidebar-nav">

@@ -5,7 +5,7 @@ require 'time'
 
 # Define globals
 
-SOURCE = "."
+SOURCE = "./src"
 
 CONFIG = {
   'version' => "0.1",

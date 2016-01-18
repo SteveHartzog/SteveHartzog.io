@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% if page.banner_image %}
+  <div class="banner-image">
+    <img 
+      src="{{ "/images/" | append: page.banner_image | prepend: site.baseurl | prepend: site.url }}" 
+      alt="{{ page.banner_image_alt }}">
+  </div>
+{% endif %}
+
+<h1>{{ page.title }}</h1>
+<div class="posts">
+
+  {% for post in site.categories.[page.category] %}
+    {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
+    {% if currentyear == year %}
+      </ul>
+    {% else %}
+      <h5>{{ currentyear }}</h5>
+      <ul>
+    {% endif %}
+    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    {% capture year %}{{currentyear}}{% endcapture %} 
+  {% endfor %}
+
+</div>
