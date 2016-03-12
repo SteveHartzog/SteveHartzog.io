@@ -83,19 +83,11 @@ html * {
 
 body {
   font: {
-    size: 100%;
+    // size: 100%;
     family: $font-family-base; // variables inside partials > _variables.scss
   }
   color: $main-fg-color;
   background: $main-bg-color;
-}
-
-/* Prevent scroll on narrow devices */
-html,
-body {
-  overflow: hidden;
-  border-right: 2px solid $color-1;
-  height: 100%;
 }
 
 /* Anchor tag style */
@@ -125,41 +117,71 @@ img {
 @import "base/syntax-highlighting";
 
 /*------------------------------------*\
-    #OBJECTS-WRAPPERS
+    #LAYOUT
 \*------------------------------------*/
-/*
- * Main wrapper is used to re-position the site content when sidebar is toggled.
- */
-.main-wrapper {
-  height: 100%;
-  padding-bottom: 75px;
-  overflow: hidden;
+.app-wrap {
+  display:flex;
+  max-height: 100vh;
+  overflow:hidden;
+  flex-direction:column;
+  opacity:1;
 }
 
+header {
+  box-shadow: 0 3px 3px 0 rgba(darken($main-bg-color, 13.5%), 1);
+  margin-bottom: 3px;
+}
+
+footer {
+  box-shadow: 0 -3px 3px 0 rgba(darken($main-bg-color, 13.5%), 1);
+  margin-top: 3px;
+}
+
+header.app-header, footer {
+  flex: 0 0 45px;
+}
+section.content {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*------------------------------------*\
+    #Grid (support in Chrome 52+?)
+\*------------------------------------*/
 /*
- * Container - Centering the page content.
- * 
- */
-.container {
-  max-width: $ultraHD; // See breakpoints in helpers/_layout.scss
-  
-  &::after { /* Clearfix */
-    content: '';
-    display: table;
-    clear: both;
-  }
+header { grid-area: header; }
+footer { grid-area: footer; }
+.side1 { grid-area: nav; }
+.side2 { grid-area: ads; }
+.content { grid-area: content; }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 20px 1fr 20px 300px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header  header header"
+    "nav    ...... content ...... ads"
+    "footer footer footer  footer footer"
+  ;
 }
-.container.content {
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 100%;
-  padding: 1em;
-}
+
+// html
+<div class="wrapper">
+  <header>This is the header</header>
+  <article class="content"></article>
+  <div class="side1"></div>
+  <div class="side2"></div>
+  <footer></div>
+</div>
+*/
 
 /*------------------------------------*\
     #COMPONENTS
 \*------------------------------------*/
 @import "components/header";
+@import "components/navigation";
+@import "components/footer";
 @import "components/sidebar";
 @import "components/post";
 

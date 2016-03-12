@@ -1,0 +1,75 @@
+{% capture navigation %}
+<section class="menu-wrapper">
+  <section class="menu menu-off">
+    Navigation should be hidden by default.
+    <!--{% if site.author_thumbnail && site.author_thumbnail != '' %}
+    <img 
+      src="{{ site.author_thumbnail | prepend: site.baseurl | prepend: site.url }}"
+      alt="{{ site.title }}" />
+
+    {% endif %}-->
+
+    <!--<div class="sidebar-info">
+      <p>
+        {{ site.description }}
+      </p>
+  </div>
+
+  <nav class="sidebar-nav">
+
+    <a class="sidebar-nav-item{% if page.url == '/' %} active {% endif %}" 
+      href="{{ '' | prepend: site.baseurl | prepend: site.url | append: '/' }}"> 
+      Home
+    </a>
+
+    {% for item in site.data.main-nav %}
+      {% assign item_url = item.href | append:"/" %}
+        {% if item_url == page.url %}
+          {% assign c = "active" %}
+        {% else %}
+          {% assign c = "" %}
+        {% endif %}
+
+        <a class="sidebar-nav-item {{ c }}" href="{{ item.href | prepend: site.baseurl | prepend: site.url }}">
+          {{ item.title }}
+        </a>
+    {% endfor %}
+
+    <a class="sidebar-nav-item" 
+      href="http://github.com/{{ site.theme.social.github }}"
+      target="_blank">
+      GitHub/Download
+    </a>
+
+    </nav>-->
+
+    {% include social.html %}
+  </section>
+</section>
+<script>
+  (function() {
+    'use strict';
+
+    document.querySelector('.material-design-hamburger__icon').addEventListener('click',
+      function() {      
+        console.log('Hamburger clicked.');
+        var menuWrapper = document.getElementsByClassName('menu-wrapper').item(0);
+        var menu = menuWrapper.childNodes[1];
+        menu.classList.toggle('menu-on');
+        var menuClassList = document.getElementsByClassName('material-design-hamburger__layer').item(0).classList;
+
+        document.body.classList.toggle('background-blur');
+        if (menuClassList.contains('material-design-hamburger__icon--to-arrow')) {
+          menuClassList.remove('material-design-hamburger__icon--to-arrow');
+          menuClassList.add('material-design-hamburger__icon--from-arrow');
+          console.log('Menu closed.');
+        } else {
+          menuClassList.remove('material-design-hamburger__icon--from-arrow');
+          menuClassList.add('material-design-hamburger__icon--to-arrow');
+          console.log('Menu opened.');
+        }
+
+      });
+  })();
+</script>
+{% endcapture %}{{ navigation | strip_newlines }}

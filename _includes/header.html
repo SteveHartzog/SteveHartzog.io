@@ -1,0 +1,38 @@
+<header class="app-header">
+
+  <section class="material-design-hamburger">
+    <button class="material-design-hamburger__icon">
+      <span class="material-design-hamburger__layer"></span>
+    </button>
+  </section>
+  <!--<nav id='materialNav'>This is a nav!</nav>
+  <script>
+    var materialNavElement = document.getElementById('materialNav');
+    var appWrapElement = document.getElementsByClassName('app-wrap').item(0);
+    document.getElementById('menu').onclick = function(event) {
+      materialNavElement.classList.add('show');
+      // materialNavElement.style.visibility = 'visible';
+      // materialNavElement.transition = 'visibility 0x, opacity 0.5s linear';
+      event.stopPropagation();
+      appWrapElement.style.opacity = '.25';
+      appWrapElement.onclick = function() {
+        materialNavElement.classList.remove('show');
+        // materialNavElement.style.display = 'none';
+        appWrapElement.style.opacity = '1';       
+        appWrapElement.onclick= '';   
+      }
+    };
+  </script>-->
+  
+
+  <!--<a id="menu" class="navigation-icon">☰</a>-->
+  <!--<div class="header-logo">{% include logo.html %}</div>-->
+  <div class="header-title">
+    <a href="{{ '' | prepend: site.baseurl | prepend: site.url | append: '/' }}" title="{{ site.title }}">
+    {{ site.title }}<small>{{ site.tagline }}</small>
+    </a>
+  </div> 
+  <a href="" class="fa fa-search"></a>  
+  <a href="" class="fa fa-share-alt"></a>
+  <a href="#menu">&#8942;</a>
+</header>

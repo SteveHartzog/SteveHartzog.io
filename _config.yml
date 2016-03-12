@@ -3,7 +3,7 @@ title: Steve Hartzog
 tagline: '' 
 email: shartzog@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Professional JavaScript web developer... who simply can't wait for JSP to die the horrible death it deserves and thinks it would be a fine idea if Microsoft bought Canonical.
+  Professional JavaScript web developer... who simply can't wait for JSP to die the horrible death it deserves and who knows that it would be great if Microsoft bought Canonical.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 logourl: /images/logo.png # Site logo
@@ -44,6 +44,9 @@ destination: _site
 
 # Permalinks
 permalink:        pretty
+
+# Gems
+gems: [jekyll-paginate]
 
 # Pagination config
 paginate: 5

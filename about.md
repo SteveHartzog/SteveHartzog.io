@@ -14,7 +14,7 @@ Also, Steve is the co-founder and CTO of [SBC Tech Partners, LLC](http://www.sbc
 
 ### Complaints and rants can be directed to
 
-[shartzog@sbctechpartners.com]()
+[shartzog@gmail.com]()
 
 ---
 

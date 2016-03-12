@@ -10,4 +10,4 @@ comments: true
 ---
 Here are my thoughts on web application architecture. It was a presentation I did for a company in DC for an interview.
 
-Google Slides: [Application Architecture](http://slides.com/stevehartzog/apparchitecture#/)
+  Google Slides: [Application Architecture](http://slides.com/stevehartzog/apparchitecture#/)

@@ -29,6 +29,7 @@
     <!--<link rel="prefetch" href="{{ site.url }}">-->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="stylesheet" href="{{ '/styles/site.css' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- IE Fixes -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,30 +42,16 @@
     {% include style.html %}
   </head>
   <body>
-    <div class="main-wrapper">
-      <header>
-        <div class="container">
-          <div class="header-logo">{% include logo.html %}</div>
-          <div class="header-title">
-            <a href="{{ '' | prepend: site.baseurl | prepend: site.url | append: '/' }}" 
-              title="{{ site.title }}"> 
-              <h3>{{ site.title }}<small>{{ site.tagline }}</small></h3>
-            </a>
-          </div>        
-        </div>  
-      </header>
+    <div class="app-wrap">
+      {% include header.html %}
       
-      <div class="container content">
-          {{ content }}
-      </div>
-      <a href="#0" class="wc-top">Top</a>
-      
+      <section class="content">
+        {% include navigation.html %}
+        {{ content }}
+      </section>
+      <!--<a href="#0" class="wc-top">Top</a>-->
+      {% include footer.html %}
     </div>
-
-    {% include sidebar.html %}
-    <label for="sidebar-checkbox" class="sidebar-toggle">
-      <span></span>
-    </label>
 
     <script type="text/javascript">
       var config = {

@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    #COMPONENTS-FOOTER
+\*------------------------------------*/
+
+/*
+ * Footer
+ *
+ * footer used to contain basic context details and year.
+ */
+
+footer {
+  background: darken($main-bg-color, 25%);
+  display: flex;
+  text-align: center;
+  div {
+    flex: 1 0;
+    align-self: center;
+  }
+  & div:first-child {
+    padding-left: 10px;
+    text-align: left;
+  }
+  & div:last-child {
+    padding-right: 10px;
+    text-align: right;
+  }
+}
