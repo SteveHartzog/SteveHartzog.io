@@ -3,7 +3,7 @@ layout: post
 title:  "State of the Web, 2017 Edition"
 date:   2017-01-3 19:21:00
 categories:
- - environment
+ - javascript
 banner_image: aurelia.png
 comments: true
 ---
